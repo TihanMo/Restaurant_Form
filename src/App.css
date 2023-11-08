@@ -1,72 +1,147 @@
 
-.form {
-  background-color: #addebe;
-  padding: 20px;
-  max-width: 500px;
-  margin: 40px auto;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
- }
+  .form {
+    background-color: #addebe;
+    padding: 20px;
+    max-width: 500px;
+    margin: 40px auto;
+    border-radius: 10px;
+    box-shadow: 0 1px 20px rgb(125, 151, 58, 0.2);
+  }
 
- h1 {
-  font-family: "Regular-Italian" !important;
-  color: #8eac40;
-  font-size: 75px;
-  margin-bottom: -20px;
-  text-align: center;
- }
- form {
-  font-family: 'Semplicita';
-  color: #24212a;
-  display: flex;
-  flex-direction: column;
- }
- 
- label {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
- }
- 
- input {
-  font-family: 'Semplicita-Light';
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #24212a;
-  border-radius: 5px;
- }
- 
- button {
-  font-family: 'Semplicita';
-  padding: 10px 20px;
-  background-color: #8eac40;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px;
- }
- 
- button:hover {
-  background-color: #45a049;
- }
+  .error-email, .error-place {
+    margin-bottom: 10px;
+    margin-top: -10px;
+    font-size: small;
+    color: #f40347;
+  }
 
- /*Italianno*/
- @font-face {
-  font-family: "Regular-Italian"; 
-  src: local("Italianno-Regular"),
-      url("../fonts/Italianno-Regular.ttf") format("truetype");
-}
+  h1 {
+    font-family: "Regular-Italian" !important;
+    color: #8eac40;
+    font-size: 75px;
+    margin-bottom: -20px;
+    text-align: center;
+    text-shadow: 0 1px 20px rgb(125, 151, 58, 0.2);
+  }
+  form {
+    font-family: 'Semplicita';
+    color: #24212a;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  input {
+    font-family: 'Semplicita-Light';
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #24212a;
+    border-radius: 5px;
+  }
+  
+  /*button {
+    font-family: 'Semplicita';
+    padding: 10px 20px;
+    background-color: #8eac40;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }*/
 
-/*Semplicita*/
-@font-face {
-  font-family: "Semplicita-Light";
-  src: local("Semplicita Light"),
-  url("../fonts/Simplicita/Semplicita\ Light.otf");
-}
+  .box {
+    width: auto;
+    height: auto;
+    float: center;
+    transition: .5s linear;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: 15px;
+    text-align: center;
+    margin: 0;
+    background: transparent;
+    font-weight: 900;
+    border: 2px solid #8eac40;
+  }
 
-@font-face {
-  font-family: "Semplicita";
-  src: local("Semplecita Medium"),
-  url("../fonts/Simplicita/Semplicita\ Medium.otf");
-}
+  .box:before {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 100%;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid transparent;
+    box-sizing: border-box;
+    transform: translateX(100%);
+  }
+
+  .box:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    border-top: 4px solid transparent;
+    border-right: 4px solid transparent;
+    box-sizing: border-box;
+    transform: translateX(-100%);
+  }
+
+  .box:hover {
+    box-shadow: 0 5px 15px rgba(142,172,64);
+  }
+
+  .box:hover:before {
+    border-color: #8eac40;
+    height: 100%;
+    transform: translateX(0);
+    transition: .3s transform linear, .3s height linear .3s;
+  }
+
+  .box:hover:after {
+    border-color:#8eac40;
+    height: 100%;
+    transform: translateX(0);
+    transition: .3s transform linear, .3s height linear .5s;
+  }
+
+  button {
+    font-family: "Semplicita";
+    font-size: 20px;
+    color:#24212a;
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: transparent;
+  }
+
+  /*Italianno*/
+  @font-face {
+    font-family: "Regular-Italian"; 
+    src: local("Italianno-Regular"),
+        url("../fonts/Italianno-Regular.ttf") format("truetype");
+  }
+
+  /*Semplicita*/
+  @font-face {
+    font-family: "Semplicita-Light";
+    src: local("Semplicita Light"),
+    url("../fonts/Simplicita/Semplicita\ Light.otf");
+  }
+
+  @font-face {
+    font-family: "Semplicita";
+    src: local("Semplecita Medium"),
+    url("../fonts/Simplicita/Semplicita\ Medium.otf");
+  }
